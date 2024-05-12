@@ -2,21 +2,23 @@ version: '3.8'
 services:
   bff:
     build: 
-      context: ./bff
+      context: ./bff/target
       dockerfile: Dockerfile
     depends_on:
       - mariadb
     environment:
       SPRING_PROFILES_ACTIVE: docker
     volumes:
-      - ./bff/target/application-docker.properties:/app/application-docker.properties
+      - ./bff/target/application-docker.properties:/app/application.properties
     networks:
       - backend
     ports:
       - 8080:8080
 
   frontend:
-    build: ./front
+    build:
+      context: ./front/browser
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     networks:
