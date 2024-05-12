@@ -1,4 +1,17 @@
-Explication des commandes :
+## Composants
+
+- MariaDB : Base de données relationnelle.
+- phpMyAdmin: Outil de gestion de base de données via une interface web.
+- BFF : Backend-for-Frontend qui fournit une API pour le frontend.
+
+  ## Démarrage rapide
+
+Pour lancer tous les service:
+
+```bash
+docker-compose up
+```
+## Explication des commandes
 
 docker build -t [tag] . : Construire une image.
 
